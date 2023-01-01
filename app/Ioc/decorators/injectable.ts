@@ -1,0 +1,3 @@
+function Injectable(target:Function){
+    
+}
