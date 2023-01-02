@@ -2,6 +2,9 @@ import { db } from "..";
 import Person from "../models/person.js";
 import { Repository } from "sequelize-typescript"
 import { JwtUtils } from "../utils/jwt-utils.js";
+import { Injectable } from "../Ioc/decorators/injectable.js";
+
+@Injectable
 export class AuthService {
 
 

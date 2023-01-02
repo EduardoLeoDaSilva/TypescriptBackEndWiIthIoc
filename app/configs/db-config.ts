@@ -3,11 +3,12 @@ import { Sequelize } from 'sequelize-typescript'
 export class DataBaseConnection {
 
     static startConnection() {
-        console.log(__dirname.replace('configs', '') + 'models')
 
+        console.log(process.env.DBURL)
         const db = new Sequelize({
             repositoryMode: true,
             database: 'dbteste',
+            host: process.env.DBURL,
             dialect: 'mysql',
             username: process.env.DBUSER,
             password: process.env.DBPASSWORD,

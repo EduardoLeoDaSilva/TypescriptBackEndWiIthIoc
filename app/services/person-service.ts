@@ -1,6 +1,9 @@
 import { db } from "..";
 import Person from "../models/person.js";
 import { Repository } from "sequelize-typescript"
+import { Injectable } from "../Ioc/decorators/injectable";
+
+@Injectable
 export class PersonService {
     private repo: Repository<Person>
     constructor() {
@@ -28,9 +31,9 @@ export class PersonService {
         }
     }
 
-    async savePerson(person: Person): Promise<Person | null> {
+    async savePerson(person:any): Promise<Person | null> {
         try {
-            const result = await this.repo.create({ ...person });
+            const result = await this.repo.create(person);
             return result;
         } catch (error) {
             console.log(error.message);

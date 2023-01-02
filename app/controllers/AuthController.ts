@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
+import { Injectable } from "../Ioc/decorators/injectable.js";
 
-export class PersonController {
+@Injectable
+export class AuthController {
     
     constructor(){}
 
